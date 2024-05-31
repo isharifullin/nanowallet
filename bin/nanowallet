@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/nanowallet.rb'
+
+command = ARGV.shift
+case command
+when 'generate'
+  Commands::Generate.new.run(ARGV)
+when 'show'
+  Commands::Show.new.run(ARGV)
+when 'send'
+  Commands::Send.new.run(ARGV)
+else
+  puts "unknown command #{command}"
+end

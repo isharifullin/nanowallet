@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - ./:/usr/src/app
+      - ./bundle:/usr/local/bundle
+    command: tail -F /dev/null
