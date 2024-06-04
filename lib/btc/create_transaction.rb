@@ -48,7 +48,7 @@ module BTC
       fee = bytesize * fee_per_byte
 
       tx = build_tx do |t|
-        input.each_with_index do |tx, idx|
+        input.each do |tx|
           protocol_tx = Bitcoin::P::Tx.new(tx.binary)
           t.input do |i|
             i.prev_out protocol_tx
